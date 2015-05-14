@@ -31,6 +31,12 @@
           <AssociatedConnUserName />
           <FullPath>flights_drop.sql</FullPath>
         </FileNode>
+        <FileNode Name="flights_functions.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>flights_functions.sql</FullPath>
+        </FileNode>
         <FileNode Name="flights_insert.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ASUS\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ASUS\SQLEXPRESS</AssociatedConnSrvName>
@@ -42,6 +48,12 @@
           <AssociatedConnSrvName>ASUS\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>flights_procs.sql</FullPath>
+        </FileNode>
+        <FileNode Name="flights_triggers.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ASUS\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ASUS\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>flights_triggers.sql</FullPath>
         </FileNode>
         <FileNode Name="flights_views.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ASUS\SQLEXPRESS:True</AssociatedConnectionMoniker>

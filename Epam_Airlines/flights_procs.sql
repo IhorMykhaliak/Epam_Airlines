@@ -1,3 +1,5 @@
+DROP PROC spCreateTicket
+
 USE EPAM_Airline
 
 GO
@@ -14,19 +16,21 @@ BEGIN
 	
 	DECLARE @Cost NUMERIC(18, 4);
 
-	IF (EXISTS(SELECT * FROM tblReservation r WHERE r.Id = @FlightId AND r.Seat = @Seat AND r.[Status] = 1 ) )
+	IF (EXISTS  (SELECT * FROM tblReservation r WHERE r.FlightId = @FlightId AND r.Seat = @Seat AND r.[Status] = 1 ) )
 		BEGIN
 			RAISERROR ('Seat already booked', 1, 1);
 		END
+	ELSE
+		BEGIN
+			SELECT @Cost = Cost FROM tblFlight WHERE Id = @FlightId
 
-	SELECT @Cost = Cost FROM tblFlight WHERE Id = @FlightId
+			INSERT INTO tblReservation
+						(CustomerId, FlightId, Seat, Cost, [Status])
+					VALUES 
+						(@CustomerId, @FlightId, @Seat, @Cost, 1);
 
-	INSERT INTO tblReservation
-				(CustomerId, FlightId, Seat, Cost, [Status])
-			VALUES 
-				(@CustomerId, @FlightId, @Seat, @Cost, 1);
-
-	SET @TicketId = SCOPE_IDENTITY();
+			SET @TicketId = SCOPE_IDENTITY();
+		END
 END
 
 --DROP PROC spCreateTicket
